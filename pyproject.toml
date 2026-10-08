@@ -1,0 +1,49 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ael-coder"
+version = "1.0.0"
+description = "Ael-Coder: Multi-Million-Token Code Intelligence Engine powered by ISOM-R2 & Continuous Lie-Manifold Cayley Transport"
+readme = "README.md"
+authors = [
+  { name = "Prannessh K. V. A.", email = "prannessh@gmail.com" }
+]
+license = { text = "Apache-2.0" }
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Developers",
+  "Intended Audience :: Science/Research",
+  "Topic :: Scientific/Engineering :: Artificial Intelligence",
+  "Topic :: Software Development :: Code Generators",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+]
+keywords = ["llm", "code-generation", "long-context", "isom-r2", "lie-algebra", "cayley-transform", "ollama-bridge"]
+dependencies = [
+  "torch>=2.0.0",
+  "transformers>=4.45.0",
+  "accelerate>=0.26.0",
+  "fastapi>=0.100.0",
+  "uvicorn>=0.22.0",
+  "pydantic>=2.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest",
+  "black",
+  "flake8",
+]
+
+[project.scripts]
+ael-coder = "ael_coder.cli:main"
+
+[project.urls]
+Homepage = "https://huggingface.co/Prannesshkva/Ael-Coder-1.5B"
+Repository = "https://github.com/Prannesshkva/ael-coder"
+"Ollama Registry" = "https://ollama.com/prannesshkva/ael-coder-1.5b"

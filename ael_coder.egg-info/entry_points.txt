@@ -1,0 +1,2 @@
+[console_scripts]
+ael-coder = ael_coder.cli:main
