@@ -17,7 +17,7 @@ Developed by **Prannessh K. V. A. ([@Prannesshkva](https://github.com/Prannesshk
 
 While vanilla causal attention requires over **56 GB of VRAM** for a 2,000,000-token KV cache, Ael-Coder introduces the **ISOM-R2 Streaming Engine**:
 1. **Continuous $SO(16)$ Lie-Manifold Cayley Transport**: Enforces exact mathematical isometry ($||W^T W - I||_F < 10^{-5}$) across millions of tokens without representation collapse.
-2. **Virtual SVD Paging**: Compresses key-value states ($K = U_k S_k V_k^T$) into Host RAM pages.
+2. **Isometric Manifold Projection & Rank-Deficient Anchoring**: Projects high-dimensional key-value topologies ($K = U_k S_k V_k^T$) into invariant spectral subspaces, eliminating the multi-gigabyte KV cache barrier without representation decay.
 3. **Multi-Hop Associative Graph Retrieval**: Traverses chunk centroids and lexical definitions to answer complex multi-hop architectural questions.
 4. **Strict Execution Mandate**: Bakes complete, 100% executable code generation into the model weights and ChatML templates, eliminating placeholder stubs and unverified imports.
 

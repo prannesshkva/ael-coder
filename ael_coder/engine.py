@@ -326,6 +326,12 @@ class ISOMR2Engine:
                         pos = text.find(ident)
             overlap = len(set(self.chunk_tokens[c].tolist()) & q_set)
             score += float(overlap)
+            # Prioritize core library implementation code over tests, benchmarks, and docs
+            if "### FILE:" in text:
+                if any(k in text for k in ("/tests/", "\\tests\\", "/bench/", "\\bench\\", "tests.", "bench.")):
+                    score *= 0.25
+                elif any(k in text for k in ("/src/", "\\src\\", "/lib/", "\\lib\\", "langgraph/graph/", "langgraph/channels/", "langgraph/pregel/", "libs/langgraph/langgraph/")):
+                    score *= 3.0
             lexical[c] = score
             if pos is not None:
                 tok_idx = len(self.tokenizer.encode(text[:pos], add_special_tokens=False))
