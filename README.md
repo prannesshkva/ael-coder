@@ -91,7 +91,7 @@ print(tokenizer.decode(out[0], skip_special_tokens=True))
 Audit an entire multi-file GitHub repository or local project on your laptop GPU:
 
 ```bash
-ael-coder analyze --repo "https://github.com/langchain-ai/langgraph"
+ael-coder analyze --repo "C:/username/folder"
 ```
 *Discovers core purpose, architectural data flow, and hidden implementation bottlenecks while keeping VRAM < 3.5 GB!*
 
